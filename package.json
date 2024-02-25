@@ -1,6 +1,6 @@
 {
   "name": "tailwind-attr-variant",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Babel plugin to transform custom Tailwind CSS attribute variants into standard Tailwind classes.",
   "main": "tailwind-attr-variant.js",
   "repository": "git@github.com:Imperialis-Tecnologia/tailwind-attr-variant.git",
