@@ -1,0 +1,19 @@
+{
+  "name": "tailwind-attr-variant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx babel --plugins ./tailwind-attr-variant.js ./test.jsx"
+  },
+  "keywords": [],
+  "author": "Diego Barreto da Cunha (github.com/BarretoDiego)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/types": "^7.23.9"
+  }
+}
