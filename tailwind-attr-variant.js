@@ -72,14 +72,12 @@ module.exports = function ({ types: t }) {
         const newClasses = [];
 
         path.node.attributes.forEach((attribute) => {
-          if (t.isJSXAttribute(attribute) && attribute.name) {
+          if (t.isJSXAttribute(attribute) && attribute.name && attribute.name.name) {
             const attributeName = attribute.name.name;
 
-            // Combina as duas listas para simplificar a lógica
             const allModifiers = [...pseudoClassesModifiers, ...mediaModifiers];
 
             if (allModifiers.includes(attributeName)) {
-              // Assegura que o valor está definido, seja diretamente ou através de expressão
               let value = attribute.value.value;
               if (!value && attribute.value.expression) {
                 value =
@@ -97,7 +95,6 @@ module.exports = function ({ types: t }) {
           }
         });
 
-        // Modifica ou adiciona o atributo className
         if (newClasses.length > 0) {
           const existingClassAttribute = path.node.attributes.find(
             (attr) => attr.name.name === "className"
@@ -114,7 +111,6 @@ module.exports = function ({ types: t }) {
           }
         }
 
-        // Remove os atributos processados
         attributesToRemove.forEach((attr) =>
           path.node.attributes.splice(path.node.attributes.indexOf(attr), 1)
         );
